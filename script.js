@@ -76,7 +76,7 @@ const DOM = {
         <td class="${CSSclass}">${amount}</td>
         <td>${transaction.date}</td>
         <td>
-            <img onclick="Transactions.remove(${index})" src="assets/minus.svg" alt="Remover Transações">
+            <img class="remove" onclick="Transactions.remove(${index})" src="assets/minus.svg" alt="Remover Transações">
         </td>
     `
         return html
@@ -110,10 +110,10 @@ const Utils = {
     },
 
     formatAmount(value) {
-        value = Number(value) * 100
-        console.log(value)
+        value = value * 100
 
-        return value
+
+        return Math.round(value)
     },
 
     formatDate(date) {
